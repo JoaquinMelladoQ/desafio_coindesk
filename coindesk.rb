@@ -1,6 +1,8 @@
 require "uri"
 require "net/http"
 require "json"
+
+
 url = URI("https://api.coindesk.com/v1/bpi/historical/close.json")
 
 https = Net::HTTP.new(url.host, url.port);
@@ -13,4 +15,8 @@ data_api = response.read_body
 
 data = JSON.parse(data_api)
 
-puts data.class
+# puts data.class
+
+data_hash = data["bpi"]["2020-08-14"]
+
+puts data_hash
