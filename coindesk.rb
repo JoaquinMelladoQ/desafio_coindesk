@@ -21,12 +21,7 @@ data_hash = data["bpi"]
 
 # puts data_hash
 
-filtered_data = []
-data_hash.each do | key, value |
-    if value > 5000
-        filtered_data.push( value )
-    end
 
-end
+filtered_data = data_hash.select { | key, value | value > 5000 }
 
 print filtered_data
