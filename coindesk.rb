@@ -11,4 +11,6 @@ request = Net::HTTP::Get.new(url)
 response = https.request(request)
 data_api = response.read_body
 
-data = Json.parse(data_api)
+data = JSON.parse(data_api)
+
+puts data.class
